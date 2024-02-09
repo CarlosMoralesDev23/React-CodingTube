@@ -1,11 +1,15 @@
 import "./App.css";
+import Header from "./Components/Header"
+import Section from "./Components/Section"
+import Footer from "./Components/Footer"
 
 function App() {
-    const [count, setCount] = useState(0);
 
     return (
         <>
-            <h2>Bienvenidos al curso de React en CodingTube</h2>
+            <Header/>
+            <Section/>
+            <Footer/>
         </>
     );
 }
