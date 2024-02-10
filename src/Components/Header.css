@@ -1,7 +1,8 @@
 .header{
     background-color: yellow;
     color: black;
+    padding: 20px;
 }
-
-
-
+.title{
+    padding-bottom: 10px;
+}
