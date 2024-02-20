@@ -2,3 +2,9 @@
 .section{
     background-color: aqua;
 }
+
+.section{
+    margin: 10px;
+    padding: 10px;
+}
+
