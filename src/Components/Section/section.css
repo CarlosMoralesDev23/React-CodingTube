@@ -1,10 +1,43 @@
 
-.section{
+section {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
     background-color: aqua;
 }
 
-.section{
-    margin: 10px;
-    padding: 10px;
+h2{
+    text-align: center;
 }
 
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card{
+    text-align: center;
+    justify-content: center;
+    background-color: bisque;
+    box-shadow: 0px 10px 15px, -3px rgba(0, 0, 0, 0.1);
+    width: 225px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 0px;
+    & .image{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: white;
+    }
+}

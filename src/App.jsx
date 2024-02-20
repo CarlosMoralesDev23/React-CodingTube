@@ -9,7 +9,7 @@ function App() {
             <Header title1="Mi pagina web" show = {true}>
                 <h3>Este es el header (soy un children h3)</h3>
             </Header>
-            <Section title = 'Soy la Section' />
+            <Section title = 'Team Developer' />
             <Footer />
         </>
     );

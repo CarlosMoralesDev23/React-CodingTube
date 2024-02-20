@@ -1,46 +1,63 @@
-import "../../assets"
 import "./Section.css";
-
+import userCarlosMorales from '../../assets/1.png';
+import userCarlitosMorales from '../../assets/2.png';
+import userSofiaMorales from '../../assets/3.png';
+import userAlbertoMorales from '../../assets/4.png';
+import userAlexandraGarcia from '../../assets/5.png';
 
 const users = [
     {
         id: 1,
-        nombre: "Carlos Morales",
+        name: "Carlos Morales",
         description: "Web Fronted Developer Sr",
+        img: userCarlosMorales,
     },
     {
         id: 2,
-        nombre: "Carlitos Morales",
+        name: "Carlitos Morales",
         description: "Web Fronted Developer Jr",
+        img: userCarlitosMorales,
     },
     {
         id: 3,
-        nombre: "Sofia Morales",
+        name: "Sofia Morales",
         description: "Web Fronted Developer Training",
+        img: userSofiaMorales,
     },
     {
         id: 4,
-        nombre: "Alberto Morales",
+        name: "Alberto Morales",
         description: "Web Fronted Developer Ssr",
+        img: userAlbertoMorales,
+    },
+    {
+        id: 5,
+        name: "Alexandra Garcia",
+        description: "Designer UX UI Sr",
+        img: userAlexandraGarcia,
     },
 ];
 
 const Section = ({ title }) => {
     return (
         <section className="section">
-            <h3>{title}</h3>
-
-            {users.map((user) => {
-
-                const imagePath = require(`../../assets/${user.nombre}.png`).default
-                return (
-                    <div key={user.id}>
-                        <img src= {imagePath} alt= {user.nombre} />
-                        <h2>{user.nombre}</h2>
-                        <p>{user.description}</p>
-                    </div>
-                );
-            })}
+            <h2>{title}</h2>
+            <div className="cards">
+                {users.map((user) => {
+                    // const imagePath = (`../../assets/${user.id}.png`)
+                    return (
+                        <div key={user.id} className="card">
+                            <img
+                                src={user.img}
+                                alt={user.name}
+                                className="image"
+                            />
+                            <h2 className="name">{user.name}</h2>
+                            <p className="description">{user.description}</p>
+                        </div>
+                    );
+                })}
+            </div>
         </section>
     );
 };
