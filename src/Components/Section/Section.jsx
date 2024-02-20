@@ -1,4 +1,4 @@
-import "./Section.css";
+import './Section.css'
 import userCarlosMorales from '../../assets/1.png';
 import userCarlitosMorales from '../../assets/2.png';
 import userSofiaMorales from '../../assets/3.png';
