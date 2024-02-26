@@ -45,20 +45,20 @@ const Section = ({ title }) => {
 
     return (
         <section className="section">
-            <h2>{title}</h2>
+            <h2>{ title }</h2>
             <div className="cards">
-                {users.map(( {id, name, description, img } ) => {
+                {users.map(( { id, name, description, img } ) => {
                     // const imagePath = (`../../assets/${id}.png`)
                     return (
-                        <div key={id} className="card">
+                        <div key = { id } className = "card">
                             <img
-                                src={img}
-                                alt={name}
-                                className="image"
+                                src       = { img }
+                                alt       = { name }
+                                className = "image"
                             />
-                            <h2 className="name">{name}</h2>
-                            <p className="description">{description}</p>
-                            <button id={id} onClick={ ()=> { handleClick( name ) } }>Contactar</button>
+                            <h2 className = "name" > { name } </h2>
+                            <p className  = "description" > { description } </p>
+                            <button id = { id } onClick = { ()=> { handleClick( name ) } }> Contactar </button>
                         </div>
                     );
                 })}
