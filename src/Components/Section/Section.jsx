@@ -1,9 +1,9 @@
-import './Section.css'
-import userCarlosMorales from '../../assets/1.png';
-import userCarlitosMorales from '../../assets/2.png';
-import userSofiaMorales from '../../assets/3.png';
-import userAlbertoMorales from '../../assets/4.png';
-import userAlexandraGarcia from '../../assets/5.png';
+import "./Section.css";
+import userCarlosMorales from "../../assets/1.png";
+import userCarlitosMorales from "../../assets/2.png";
+import userSofiaMorales from "../../assets/3.png";
+import userAlbertoMorales from "../../assets/4.png";
+import userAlexandraGarcia from "../../assets/5.png";
 
 const users = [
     {
@@ -39,21 +39,26 @@ const users = [
 ];
 
 const Section = ({ title }) => {
+    const handleClick = (name) => {
+        console.log(`Contactando a ${name}`);
+    };
+
     return (
         <section className="section">
             <h2>{title}</h2>
             <div className="cards">
-                {users.map((user) => {
-                    // const imagePath = (`../../assets/${user.id}.png`)
+                {users.map(( {id, name, description, img } ) => {
+                    // const imagePath = (`../../assets/${id}.png`)
                     return (
-                        <div key={user.id} className="card">
+                        <div key={id} className="card">
                             <img
-                                src={user.img}
-                                alt={user.name}
+                                src={img}
+                                alt={name}
                                 className="image"
                             />
-                            <h2 className="name">{user.name}</h2>
-                            <p className="description">{user.description}</p>
+                            <h2 className="name">{name}</h2>
+                            <p className="description">{description}</p>
+                            <button id={id} onClick={ ()=> { handleClick( name ) } }>Contactar</button>
                         </div>
                     );
                 })}

@@ -40,4 +40,13 @@ h2{
         border-radius: 50%;
         background-color: white;
     }
+    & button {
+        padding: 8px;
+        border: none;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
 }
