@@ -5,6 +5,9 @@ import userSofiaMorales from "../../assets/3.png";
 import userAlbertoMorales from "../../assets/4.png";
 import userAlexandraGarcia from "../../assets/5.png";
 
+
+import { UserCard } from "./UserCard/UserCard";
+
 const users = [
     {
         id: 1,
@@ -39,27 +42,19 @@ const users = [
 ];
 
 const Section = ({ title }) => {
-    const handleClick = (name) => {
-        console.log(`Contactando a ${name}`);
-    };
 
     return (
         <section className="section">
-            <h2>{ title }</h2>
+            <h2>{title}</h2>
+
             <div className="cards">
-                {users.map(( { id, name, description, img } ) => {
+                {users.map((user) => {
                     // const imagePath = (`../../assets/${id}.png`)
                     return (
-                        <div key = { id } className = "card">
-                            <img
-                                src       = { img }
-                                alt       = { name }
-                                className = "image"
-                            />
-                            <h2 className = "name" > { name } </h2>
-                            <p className  = "description" > { description } </p>
-                            <button id = { id } onClick = { ()=> { handleClick( name ) } }> Contactar </button>
-                        </div>
+                        <UserCard
+                            key={user.id}
+                            user={user}
+                        />
                     );
                 })}
             </div>
@@ -68,3 +63,5 @@ const Section = ({ title }) => {
 };
 
 export default Section;
+
+
