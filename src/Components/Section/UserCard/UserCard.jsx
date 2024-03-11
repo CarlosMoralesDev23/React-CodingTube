@@ -5,7 +5,7 @@ export const UserCard = ({ user }) => {
     const [tecnologies, setTecnologies] = useState(['HTML', 'CSS', 'JS'])
     const [addres, setAddres] = useState({street: 'Calle Falsa', number: 123})
 
-    const { id, name, description, img } = user;
+    const { id, name, description, image } = user;
 
     const handleClick = () => {
         setIsContacted(!isContacted);
@@ -29,7 +29,7 @@ export const UserCard = ({ user }) => {
 
     return (
         <div key={id} className="card">
-            <img src={img} alt={name} className="image" />
+            <img src={image} alt={name} className="image" />
             <h2 className="name"> {name} </h2>
             <p className="description"> {description} </p>
             <button id={id} onClick={() => handleClick()}>
