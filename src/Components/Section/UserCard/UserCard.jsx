@@ -14,12 +14,15 @@ export const UserCard = ({ user }) => {
     const handleClick2 = () => {
         setTecnologies([...tecnologies, "React"]);
         console.log(tecnologies);
+        
     };
+
+
 
     const handleClick3 = () => {
         setAddres({...addres, street: 'Nueva Calle', number: 456})
         console.log(addres);
-    };
+    };0
 
     
     // console.log(`Tarjeta ${name} renderizada`)

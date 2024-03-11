@@ -5,7 +5,7 @@ import userSofiaMorales from "../../assets/3.png";
 import userAlbertoMorales from "../../assets/4.png";
 import userAlexandraGarcia from "../../assets/5.png";
 
-
+import { useEffect, useState } from "react";
 import { UserCard } from "./UserCard/UserCard";
 
 const users = [
@@ -43,23 +43,32 @@ const users = [
 
 const Section = ({ title }) => {
 
-    return (
-        <section className="section">
-            <h2>{title}</h2>
+    const [count, setCount] = useState(0)
 
-            <div className="cards">
-                {users.map((user) => {
-                    // const imagePath = (`../../assets/${id}.png`)
-                    return (
-                        <UserCard
-                            key={user.id}
-                            user={user}
-                        />
-                    );
-                })}
-            </div>
-        </section>
+    useEffect(() => {
+        console.log('UseEffect')
+    }, [count])
+
+    const handleClick = () => {
+        setCount(count + 1)
+    }
+    return (
+        <>
+            <h2>{count}</h2>
+            <button onClick={handleClick}>Contador</button>
+            <section className="section">
+                <h2>{title}</h2>
+
+                <div className="cards">
+                    {users.map((user) => {
+                        // const imagePath = (`../../assets/${id}.png`)
+                        return <UserCard key={user.id} user={user} />;
+                    })}
+                </div>
+            </section>
+        </>
     );
+    
 };
 
 export default Section;
