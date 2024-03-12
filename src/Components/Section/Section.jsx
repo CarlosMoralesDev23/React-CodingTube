@@ -43,18 +43,18 @@ import { UserCard } from "./UserCard/UserCard";
 
 const Section = ({ title }) => {
 
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
     const [likes, setLikes] = useState(0)
-    const [users, setUsers] = useState([])
+    const [user, setUser] = useState({})
 
     useEffect(() => {
         console.log('UseEffect')
-        fetch('https://dummyjson.com/users')
-        .then( res => res.json() )
-        .then( data => {
-            console.log(data.users)
-            setUsers(data.users)
-        }) 
+        fetch(`https://dummyjson.com/users/${count}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setUser(data);
+            }); 
 
     }, [count])
 
@@ -64,7 +64,7 @@ const Section = ({ title }) => {
     return (
         <>
             <h2>{count}</h2>
-            <button onClick={handleClick}>Contador</button>
+            <button onClick={handleClick}>Siguiente</button>
 
             <h2>{likes}</h2>
             <button onClick={handleIncreaseLikes}>Likes</button>
@@ -73,11 +73,12 @@ const Section = ({ title }) => {
                 <h2>{title}</h2>
 
                 <div className="cards">
-                    {/* {users.map((user) => { */}
+                    <UserCard key={user.id} user={user} />
+                    {/* {users.map((user) => {
                     {users.map((user) => {
                         // const imagePath = (`../../assets/${id}.png`)
                         return <UserCard key={user.id} user={user} />;
-                    })}
+                    })} */}
                 </div>
             </section>
         </>
